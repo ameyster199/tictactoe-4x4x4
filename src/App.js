@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import TicTacToe from './components/TicTacToe';
+import './App.css'; // Ensure this file contains the styles
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [totalPoints, setTotalPoints] = useState({ X: 0, O: 0 });
+
+    const updatePoints = (points) => {
+        setTotalPoints(prevPoints => ({
+            X: prevPoints.X + points.X,
+            O: prevPoints.O + points.O
+        }));
+    };
+
+    const winner = totalPoints.X > totalPoints.O ? 'X' : totalPoints.X < totalPoints.O ? 'O' : 'Draw';
+
+    return (
+        <div className="App">
+            <TicTacToe updatePoints={updatePoints} />
+            
+        </div>
+    );
+};
 
 export default App;
