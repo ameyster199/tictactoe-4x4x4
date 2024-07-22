@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# TicTacToe (4x4x4)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+TicTacToe (4x4x4) is a React-based implementation of a three-dimensional Tic-Tac-Toe game played on a 4x4x4 grid. The game can be played in either single-player mode against an AI or in a two-player mode. The goal of the game is to get four marks in a row either horizontally, vertically, or diagonally across any layer or across multiple layers.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Single-Player Mode**: Play against an AI that makes calculated moves.
+- **Two-Player Mode**: Play against another human player on the same device.
+- **Dynamic Point Calculation**: Points are calculated dynamically based on the current board state.
+- **Player Choice**: Choose whether the player or the AI starts the game.
+- **Interactive UI**: Clickable grid cells to place marks.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Setup and Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/yourusername/tictactoe-4x4x4.git
+   cd tictactoe-4x4x4
+   ```
 
-### `npm test`
+2. **Install Dependencies**:
+   Make sure you have Node.js installed. Then, run the following command:
+   ```bash
+   npm install
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Start the Application**:
+   ```bash
+   npm start
+   ```
+   This will start the application on `http://localhost:3000`.
 
-### `npm run build`
+## How to Play
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Start the Game**:
+   - Choose whether the player or the AI starts by clicking the respective button: "Player Starts" or "Computer Starts".
+   - To play in two-player mode, click the "Two Player Mode" button.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Gameplay**:
+   - Click on any cell in the 4x4x4 grid to place your mark (X for player 1, O for player 2 or AI).
+   - The game will automatically switch turns between players or between the player and the AI.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Winning the Game**:
+   - The game automatically calculates the points for each player. The first player to get four marks in a row (horizontally, vertically, or diagonally) wins the game.
+   - The winner is displayed in the information panel.
 
-### `npm run eject`
+## Game Logic
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### AI Mechanics
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The AI utilizes a minimax algorithm to determine the best move. It evaluates the board and makes a move that maximizes its chances of winning while minimizing the player's chances.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Point Calculation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Points are calculated dynamically based on the current board state. Each completed line of four marks (either X or O) across any row, column, or diagonal adds points to the respective player.
 
-## Learn More
+### Winning Conditions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The game checks for winning conditions by evaluating all possible lines (horizontal, vertical, and diagonal) across all layers and between layers.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## File Structure
 
-### Code Splitting
+- **src**: Contains the main game logic and components.
+  - `TicTacToe.js`: Main game component.
+  - `index.js`: Entry point of the React application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Dependencies
 
-### Analyzing the Bundle Size
+- React: JavaScript library for building user interfaces.
+- useState, useEffect: React hooks for managing state and side effects.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Contributing
 
-### Making a Progressive Web App
+1. Fork the repository.
+2. Create your feature branch: `git checkout -b feature/your-feature-name`.
+3. Commit your changes: `git commit -m 'Add some feature'`.
+4. Push to the branch: `git push origin feature/your-feature-name`.
+5. Open a pull request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## License
 
-### Advanced Configuration
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Acknowledgements
 
-### Deployment
+- Thanks to the React community for providing comprehensive documentation and resources.
+- Special thanks to all contributors for their valuable inputs.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
